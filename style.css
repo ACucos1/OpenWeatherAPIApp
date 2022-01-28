@@ -82,7 +82,7 @@ header h1 {
     flex-direction: column;
     width: 90%;
     max-width: 1300px;
-    min-height: 900px;
+    min-height: 600px;
     margin: 0 auto;
     /* background-color: #fff; */
     border-radius: 25px;
@@ -167,6 +167,10 @@ footer {
 @media only screen and (max-width: 475px){
     header h1 {
         font-size: 45px;
+    }
+
+    .data-display{
+        min-height: 900px;
     }
 
     .data-display .city-card span {
