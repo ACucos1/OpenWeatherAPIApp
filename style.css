@@ -82,9 +82,8 @@ header h1 {
     flex-direction: column;
     width: 90%;
     max-width: 1300px;
-    min-height: 560px;
+    min-height: 900px;
     margin: 0 auto;
-    /* height: 500px; */
     /* background-color: #fff; */
     border-radius: 25px;
     box-shadow: var(--shadow);
@@ -100,6 +99,7 @@ header h1 {
     padding: 50px;
     margin: 5px 0;
     box-shadow: var(--shadow);
+    max-height: 300px;
     /* animation: pageScrollFwd .4s ease-in forwards; */
 }
 
@@ -164,6 +164,16 @@ footer {
     animation: pageScrollBk2 .25s ease-in forwards;
 }
 
+@media only screen and (max-width: 475px){
+    header h1 {
+        font-size: 45px;
+    }
+
+    .data-display .city-card span {
+        font-size: 15px;
+    }
+
+}
 
 @keyframes pageScrollFwd {
     0% {
