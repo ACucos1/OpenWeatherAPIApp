@@ -1,0 +1,214 @@
+:root {
+    --shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.329);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+}
+
+header {
+    /* background-color: red; */
+    min-height: 100px;
+    text-align: center;
+    color: #fff;
+
+}
+
+header h1 {
+    font-size: 80px;
+    margin-top: 100px;
+}
+
+.search{
+    text-align: center;
+    margin-top: 50px;
+    height: 174px;
+}
+.search .search-bar-wrapper{
+    height: 80px;
+}
+
+.search input 
+{
+    width: 80%;
+    margin: auto;
+    display: block;
+    border: none;
+    padding: 10px 5px;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: gray;
+    transition: all .25s ease;
+    
+    box-shadow: var(--shadow);
+}
+
+.search input:focus {
+    outline: none;
+    transform: scale(1.1);
+    background-color: rgb(236, 236, 236);
+}
+
+.search button {
+    width: 50%;
+    margin: auto;
+    border: none;
+    background-color: rgb(53, 126, 209);
+    padding: 20px 10px;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all .25s ease;
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.search button:hover {
+    background-color: rgb(35, 78, 128);
+}
+
+.data-display{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1300px;
+    min-height: 560px;
+    margin: 0 auto;
+    /* height: 500px; */
+    /* background-color: #fff; */
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+    margin-top: 100px;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.data-display .city-card{
+    background-color: white;
+    width: 90%;
+    border-radius: 25px;
+    padding: 50px;
+    margin: 5px 0;
+    box-shadow: var(--shadow);
+    /* animation: pageScrollFwd .4s ease-in forwards; */
+}
+
+.data-display .city-card img {
+    height: 20px;
+}
+
+.controls{
+    text-align: center;
+    box-shadow: var(--shadow);
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 25px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls button {
+    border: none;
+    margin: 25px;
+    border-radius: 25px;
+    padding: 10px 50px;
+    background-color: rgb(53, 126, 209);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+.controls button:hover {
+    background-color: rgb(35, 78, 128);
+}
+
+footer {
+    min-height: 100px;
+}
+
+.scrolling-forward {
+    /* animation-name: pageScrollFwd, pageScrollFwd2;
+    animation-direction: forwards, forwards;
+    animation-duration: .4s, .25s;
+    animation-delay: 0s, .4s;
+    animation-timing-function: ease-out, ease-in;
+    animation-fill-mode: forwards, forwards; */
+    /* animation-iteration-count: 1, 1; */
+    
+    animation: pageScrollFwd .4s ease-in forwards;
+}
+
+.scrolling-forward2{
+    animation: pageScrollFwd2 .25s ease-in forwards;
+}
+
+.scrolling-backward {
+    animation: pageScrollBk .4s ease-in forwards;
+}
+
+.scrolling-backward2{
+    animation: pageScrollBk2 .25s ease-in forwards;
+}
+
+
+@keyframes pageScrollFwd {
+    0% {
+        margin-left: 0;
+        opacity: 1;   
+    }
+
+    100%{
+        margin-left: 300%;
+        opacity: 0;
+    }
+}
+
+@keyframes pageScrollFwd2 {
+    0%{
+        opacity: 0;
+        margin-left: -100%;
+    }
+
+    100%{
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+
+@keyframes pageScrollBk {
+    0% {
+        margin-right: 0;
+        opacity: 1;   
+    }
+
+    100%{
+        margin-right: 300%;
+        opacity: 0;
+    }
+}
+
+@keyframes pageScrollBk2 {
+    0%{
+        opacity: 0;
+        margin-right: -100%;
+    }
+
+    100%{
+        opacity: 1;
+        margin-right: 0;
+    }
+}
