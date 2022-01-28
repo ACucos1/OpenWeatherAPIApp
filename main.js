@@ -1,3 +1,16 @@
+/******************************************************************************
+***
+* BTI425 – Assignment 1
+* I declare that this assignment is my own work in accordance with Seneca Academic Policy.
+* No part of this assignment has been copied manually or electronically from any other source
+* (including web sites) or distributed to other students.
+*
+* Name: Alex Cucos Student ID: 044226090 Date: 28/01/2022
+*
+*
+******************************************************************************
+**/ 
+
 const OPEN_WEATHER_KEY = 'ed7b4eecbe0c58373393d2c6f8ab5ec2'
 
 let displayData = []
@@ -62,7 +75,7 @@ const fetchCityData = async (cityName) => {
         //compile all city data into array
         let weatherData = []
         await Promise.all(cityIds.map(async (cityId) => {
-            console.log(cityId)
+            // gitconsole.log(cityId)
             let url = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${OPEN_WEATHER_KEY}`
             let data = await $.ajax(url)
             weatherData.push(data)
@@ -133,9 +146,18 @@ const paginateData = () => {
 
     $('#data').empty()
     let page = pageNum
-    for(let i = page; i < page + 3; i++){
-        $('#data').append(displayData[i])
+    if(displayData.length > 3){
+        for(let i = page; i < page + 3; i++){
+            $('#data').append(displayData[i])
+        }
     }
+    else {
+        for(let i = 0; i < displayData.length; i++){
+            console.log('Displaying City')
+            $('#data').append(displayData[i])
+        }
+    }
+    
 
     $('.city-card').addClass(globalDir == 'next' ? 'scrolling-forward2' : 'scrolling-backward2')
 }
